@@ -15,7 +15,8 @@ button.addEventListener('click',()=>{
     //output the result
     const result = document.getElementById('result');
     if(ans<18.5){
-        result.innerHTML="Result : "+ans+" kg/m<sup>2</sup> (Underweight)";
+        let less= ((18.5*meter*meter)-w).toFixed(0);
+        result.innerHTML="Result : "+ans+" kg/m<sup>2</sup> (Underweight) <br> gain: "+(less)+" kg weight";
         result.style.color="yellow";
     }
     else if(ans>=18.5 && ans<= 24.9){
@@ -23,11 +24,14 @@ button.addEventListener('click',()=>{
         result.style.color="green";
     }
     else if(ans>=25.0 && ans<= 29.9){
-        result.innerHTML="Result : "+ans+" kg/m<sup>2</sup> (Over Weight)";
+        let extra= (w-(24.9*meter*meter)).toFixed(0);
+        
+        result.innerHTML="Result : "+ans+" kg/m<sup>2</sup> (Over Weight)<br> loose: "+(extra)+" kg weight";
         result.style.color="orange";
     }
     else{
-        result.innerHTML="Result : "+ans+" kg/m<sup>2</sup> (Obesity)";
+        let extra= (w-(24.9*meter*meter)).toFixed(0);
+        result.innerHTML="Result : "+ans+" kg/m<sup>2</sup> (Obesity)<br> loose: "+(extra)+" kg weight";
         result.style.color="red";
     }
 
