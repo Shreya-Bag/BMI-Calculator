@@ -39,6 +39,6 @@ button{
 
 #result{
     font-size: 25px;
-    
+    text-shadow: 1px 1px black;
     font-weight: bold;
 }
